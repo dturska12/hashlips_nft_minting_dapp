@@ -102,21 +102,21 @@ function App() {
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
   const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
-    CONTRACT_ADDRESS: "",
-    SCAN_LINK: "",
+    CONTRACT_ADDRESS: "0x4BeB2829411F83daE74Dd69236ED965BF8a66130",
+    SCAN_LINK: "https://etherscan.io/token/0x19534c6bc37fd44c93f3a6506e44f32a99670f43",
     NETWORK: {
-      NAME: "",
-      SYMBOL: "",
-      ID: 0,
+      NAME: "Ethereum",
+      SYMBOL: "ETH",
+      ID: 1,
     },
-    NFT_NAME: "",
-    SYMBOL: "",
-    MAX_SUPPLY: 1,
-    WEI_COST: 0,
-    DISPLAY_COST: 0,
-    GAS_LIMIT: 0,
-    MARKETPLACE: "",
-    MARKETPLACE_LINK: "",
+    NFT_NAME: "KronicKatz.NFT",
+    SYMBOL: "KRONIC",
+    MAX_SUPPLY: 10000000000000000000000,
+    WEI_COST: 10000000000000000,
+    DISPLAY_COST: 0.01,
+    GAS_LIMIT: 285000,
+    MARKETPLACE: "Opeansea",
+    MARKETPLACE_LINK: "https://opensea.io/collection/kronickatz-nft",
     SHOW_BACKGROUND: false,
   });
 
@@ -201,23 +201,16 @@ function App() {
         style={{ padding: 24, backgroundColor: "var(--primary)" }}
         image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
-        <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
         <s.SpacerSmall />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
-          <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg alt={"example"} src={"/config/images/example.gif"} />
-          </s.Container>
           <s.SpacerLarge />
           <s.Container
             flex={2}
             jc={"center"}
             ai={"center"}
             style={{
-              backgroundColor: "var(--accent)",
               padding: 24,
               borderRadius: 24,
-              border: "4px dashed var(--secondary)",
-              boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
             }}
           >
             <s.TextTitle
@@ -274,7 +267,7 @@ function App() {
                 </s.TextDescription>
                 <s.SpacerSmall />
                 {blockchain.account === "" ||
-                blockchain.smartContract === null ? (
+                  blockchain.smartContract === null ? (
                   <s.Container ai={"center"} jc={"center"}>
                     <s.TextDescription
                       style={{
@@ -370,13 +363,7 @@ function App() {
             <s.SpacerMedium />
           </s.Container>
           <s.SpacerLarge />
-          <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg
-              alt={"example"}
-              src={"/config/images/example.gif"}
-              style={{ transform: "scaleX(-1)" }}
-            />
-          </s.Container>
+
         </ResponsiveWrapper>
         <s.SpacerMedium />
         <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
